@@ -1,6 +1,6 @@
 # cryptoconfig 
 ## Python class for handling encrypted elements in a config file.  Extension of [ConfigParser](https://docs.python.org/3/library/configparser.html 'ConfigParser').
-### This class overides the 'get' method of ConfigParser replacing it with [Fernet](https://cryptography.io/en/latest/fernet/ 'Fernet') symetric encryption so that you can safely store encrypted passwords in an ini file.
+### This class overides the 'get' method of ConfigParser replacing it with [Fernet](https://cryptography.io/en/latest/fernet/ 'Fernet') symmetric encryption so that you can safely store encrypted passwords in an ini file.
 ### Example ini file.
 ```
 [PARSE_TEST]
