@@ -35,7 +35,7 @@ if __name__ == "__main__":
 ```
 ### To install this from git use:
 ```
-pip install git+git://...
+pip install git+https://github.nrel.gov/ITS-Data-Management/CryptoConfig.git
 ```
 ### This package installs a helper command line utility called cryptocfg.py to generate, encrypt, and decrypt Fernet password strings.
 ```
