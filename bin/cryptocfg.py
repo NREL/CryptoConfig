@@ -10,7 +10,7 @@ use: cryptocfg.py [options]
 where options include:
 \t--decrypt= | -d, decrypt the string, requires -i and -p 
 \t--encrypt= | -e, encrypt the string, requires -i and -p 
-\t--input= | -i, string to encrypt or decrypt
+\t--input= | -i, string to encrypt or decrypt, if not supplied read from stdin
 \t--password= | -p, key for encrypting or decrypting a string
 \t--genkey generate an encryption/decryption string
 examples:
@@ -68,6 +68,17 @@ for opt, arg in options:
     elif opt in ('-p', '--password'):
         # set password string from gen_key
         app_key = arg
+
+if not input_str:
+    # if the user has not supplied input via the CLI, read from stdin
+    print("Awaiting input from stdin")
+    input_str = sys.stdin.read()
+
+    # on windows to enter a EOF you have to enter a newline, followed by Ctrl-Z
+    # so if the last character is a linefeed strip it off
+    if input_str[-1] == chr(10):
+        input_str = input_str[:-1]
+
 
 #print(f"decrypt: {decrypt} encrypt: {encrypt} input_str: {input_str} app_key: {app_key}")
 
