@@ -43,7 +43,7 @@ use: cryptocfg.py [options]
 where options include:
 	--decrypt= | -d, decrypt the string, requires -i and -p 
 	--encrypt= | -e, encrypt the string, requires -i and -p 
-	--input= | -i, string to encrypt or decrypt
+	--input= | -i, string to encrypt or decrypt, if not supplied read from stdin
 	--password= | -p, key for encrypting or decrypting a string
 	--genkey generate an encryption/decryption string
 examples:
