@@ -11,7 +11,7 @@ where options include:
 \t--decrypt= | -d, decrypt the string, requires -i and -p 
 \t--encrypt= | -e, encrypt the string, requires -i and -p 
 \t--input= | -i, string to encrypt or decrypt, if not supplied read from stdin
-\t--password= | -p, key for encrypting or decrypting a string
+\t--password= | -p, key for encrypting or decrypting a string, if not supplied will be prompted for
 \t--genkey generate an encryption/decryption string
 examples:
 Encrypt:
@@ -68,6 +68,9 @@ for opt, arg in options:
     elif opt in ('-p', '--password'):
         # set password string from gen_key
         app_key = arg
+
+if not app_key:
+    app_key = input("Enter password:")
 
 if not input_str:
     # if the user has not supplied input via the CLI, read from stdin
