@@ -45,8 +45,6 @@ except getopt.GetoptError as err:
     print('ERROR:', err)
     sys.exit(1)
 
-#print('OPTIONS   :', options)
-
 encrypt = False
 decrypt = False
 input_str = None
@@ -81,9 +79,6 @@ if not input_str:
     # so if the last character is a linefeed strip it off
     if input_str[-1] == chr(10):
         input_str = input_str[:-1]
-
-
-#print(f"decrypt: {decrypt} encrypt: {encrypt} input_str: {input_str} app_key: {app_key}")
 
 crypt = Crypt(app_key)
 if encrypt:
